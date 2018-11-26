@@ -17,16 +17,14 @@ printReverse(testArrayForPrintREverse2);
 // isUniform() 配列内のデータが全て一致する場合、trueを返す
 
 const isUniform = (array) => {
-    const firstNum = array[0];
-    let answer;
-    array.forEach(function (num) {
-        if ((answer === undefined || answer === true) && firstNum === num) {
-            answer = true;
-        } else {
-            answer = false;
+    let result = true;
+    const firstValue = array[0];
+    array.forEach((value) => {
+        if (result) {
+            result = (firstValue === value);
         }
     });
-    return answer;
+    return result;
 }
 
 const testArrayForIsUniform1 = [1, 1, 1, 1];
